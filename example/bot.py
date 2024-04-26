@@ -23,7 +23,7 @@ async def bot_tele(text):
     application.add_handler(CommandHandler("help", help))
 
     # Start application
-    await application.bot.set_webhook(url=getenv("webhook"))
+    await application.bot.set_webhook(url=getenv("https://telegram-bot-ruddy.vercel.app"))
     await application.update_queue.put(
             Update.de_json(data=text, bot=application.bot)
         )
